@@ -5,19 +5,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
- * Created by Hasan on 10/29/2017.
+ * Created by Hasan on 10/31/2017.
  */
 @Entity
-public class Admin {
+public class Customer {
     @Id
     @GeneratedValue
-    private int admin_id;       //pk
+    private int customer_id;
     private String name;
     private String surname;
     private String email;
+    private String cell;
 
-    public int getAdmin_id() {
-        return admin_id;
+    public int getCustomer_id() {
+        return customer_id;
     }
 
     public String getName() {
@@ -32,21 +33,27 @@ public class Admin {
         return email;
     }
 
-    public Admin(Builder builder){
-        this.admin_id = builder.admin_id;
+    public String getCell() {
+        return cell;
+    }
+
+    public Customer(Builder builder){
+        this.customer_id = builder.customer_id;
         this.name = builder.name;
         this.surname = builder.surname;
         this.email = builder.email;
+        this.cell = builder.cell;
     }
 
     public static class Builder{
-        private int admin_id;       //pk
+        private int customer_id;            //pk
         private String name;
         private String surname;
         private String email;
+        private String cell;
 
-        public Builder admin_id(int admin_id) {
-            this.admin_id = admin_id;
+        public Builder customer_id(int customer_id) {
+            this.customer_id = customer_id;
             return this;
         }
 
@@ -65,8 +72,14 @@ public class Admin {
             return this;
         }
 
-        public Admin build(){
-            return  new Admin(this);
+        public Builder cell(String cell) {
+            this.cell = cell;
+            return this;
+        }
+
+        public Customer build(){
+            return  new Customer(this);
         }
     }
+
 }
