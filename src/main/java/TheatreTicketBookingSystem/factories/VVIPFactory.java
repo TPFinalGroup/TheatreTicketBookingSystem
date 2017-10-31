@@ -8,7 +8,6 @@ import java.util.Map;
  * Created by Hasan on 10/31/2017.
  */
 public class VVIPFactory {
-
     public static VVIP getVVIP(Map<String, Object> values){
         VVIP factoryVVIP = new VVIP.Builder()
                 .seat_id((Integer)values.get("seat_id"))
