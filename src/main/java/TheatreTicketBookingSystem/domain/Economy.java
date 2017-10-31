@@ -40,7 +40,7 @@ public class Economy implements Seating_Class {
 //        private Viewer viewer;
 
 
-        public Builder class_name(int price) {
+        public Builder class_name(String class_name) {
             this.class_name = class_name;
             return this;
         }
