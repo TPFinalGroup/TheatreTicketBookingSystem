@@ -2,12 +2,14 @@ package TheatreTicketBookingSystem.domain;
 
 import TheatreTicketBookingSystem.domain.Intefaces.Movie;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
  * Created by Hasan on 10/31/2017.
  */
+@Entity
 public class SciFi implements Movie
 {
     @Id

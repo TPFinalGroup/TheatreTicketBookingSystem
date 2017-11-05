@@ -2,11 +2,18 @@ package TheatreTicketBookingSystem.domain;
 
 import TheatreTicketBookingSystem.domain.Intefaces.Seating_Class;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * Created by Hasan on 10/31/2017.
  */
+@Entity
 public class Economy implements Seating_Class {
 
+    @Id
+    @GeneratedValue
     private Long seat_id;
     private String class_name;
     private int price;

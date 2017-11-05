@@ -2,13 +2,20 @@ package TheatreTicketBookingSystem.domain;
 
 import TheatreTicketBookingSystem.domain.Intefaces.Seating_Class;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * Created by Hasan on 10/31/2017.
  */
+@Entity
 public class VVIP implements Seating_Class {
 
     private String class_name;
     private int price;
+    @Id
+    @GeneratedValue
     private Long seat_id;
 
     public VVIP() {
