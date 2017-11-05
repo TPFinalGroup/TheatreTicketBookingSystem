@@ -7,7 +7,7 @@ import TheatreTicketBookingSystem.domain.Intefaces.Seating_Class;
  */
 public class Economy implements Seating_Class {
 
-    private int seat_id;
+    private Long seat_id;
     private String class_name;
     private int price;
 
@@ -22,7 +22,7 @@ public class Economy implements Seating_Class {
         return price;
     }
 
-    public int getSeat_id() {
+    public Long getSeat_id() {
         return seat_id;
     }
 
@@ -35,7 +35,7 @@ public class Economy implements Seating_Class {
     public static class Builder{
         private String class_name;
         private int price;
-        private int seat_id;
+        private Long seat_id;
 //        private Recipe recipe;
 //        private Viewer viewer;
 
@@ -50,7 +50,7 @@ public class Economy implements Seating_Class {
             return this;
         }
 
-        public Builder seat_id(int seat_id) {
+        public Builder seat_id(Long seat_id) {
             this.seat_id = seat_id;
             return this;
         }

@@ -11,12 +11,12 @@ import javax.persistence.Id;
 public class Admin {
     @Id
     @GeneratedValue
-    private int admin_id;       //pk
+    private Long admin_id;       //pk
     private String name;
     private String surname;
     private String email;
 
-    public int getAdmin_id() {
+    public Long getAdmin_id() {
         return admin_id;
     }
 
@@ -40,12 +40,12 @@ public class Admin {
     }
 
     public static class Builder{
-        private int admin_id;       //pk
+        private Long admin_id;       //pk
         private String name;
         private String surname;
         private String email;
 
-        public Builder admin_id(int admin_id) {
+        public Builder admin_id(Long admin_id) {
             this.admin_id = admin_id;
             return this;
         }

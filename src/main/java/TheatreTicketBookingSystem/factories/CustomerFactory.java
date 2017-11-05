@@ -10,7 +10,7 @@ import java.util.Map;
 public class CustomerFactory {
     public static Customer getCustomer(Map<String, Object> values){
         Customer factoryCustomer = new Customer.Builder()
-                .customer_id((Integer)values.get("customer_id"))
+                .customer_id((Long)values.get("customer_id"))
                 .cell((String) values.get("cell"))
                 .email((String)values.get("email"))
                 .name((String)values.get("name"))

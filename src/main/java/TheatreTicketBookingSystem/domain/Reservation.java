@@ -12,14 +12,14 @@ import java.util.ArrayList;
 public class Reservation {
     @Id
     @GeneratedValue
-    private int reservation_id;      //pk
+    private Long reservation_id;      //pk
     private ArrayList<Integer> seats;
     private int total_price;
     private int show_id;            //fk
     private int customer_id;        //fk
 
 
-    public int getReservation_id() {
+    public Long getReservation_id() {
         return reservation_id;
     }
 
@@ -46,14 +46,14 @@ public class Reservation {
     }
 
     public static class Builder{
-        private int reservation_id;      //pk
+        private Long reservation_id;      //pk
         private ArrayList<Integer> seats;
         private int total_price;
         private int show_id;            //fk
         private int customer_id;        //fk
 
 
-        public Builder reservation_id(int reservation_id) {
+        public Builder reservation_id(Long reservation_id) {
             this.reservation_id = reservation_id;
             return this;
         }

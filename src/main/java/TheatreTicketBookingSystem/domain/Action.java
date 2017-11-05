@@ -14,7 +14,7 @@ public class Action implements Movie
 {
     @Id
     @GeneratedValue
-    private int movie_id;
+    private Long movie_id;
     private int duration;
     private String title;
 
@@ -23,7 +23,7 @@ public class Action implements Movie
 
     }
 
-    public int getMovie_Id()
+    public Long getMovie_Id()
     {
         return movie_id;
     }
@@ -47,13 +47,13 @@ public class Action implements Movie
 
     public static class Builder{
 
-        private int movie_id;
+        private Long movie_id;
         private String title;
         private int duration;
 //        private Recipe recipe;
 //        private Viewer viewer;
 
-        public Builder movie_id(int movie_id) {
+        public Builder movie_id(Long movie_id) {
             this.movie_id = movie_id;
             return this;
         }
