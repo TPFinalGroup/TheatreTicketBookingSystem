@@ -16,14 +16,17 @@ public class Customer {
     private String surname;
     private String email;
     private String cell;
+    private String password;
+
+    public String getPassword() {
+        return password;
+    }
 
     public Long getCustomer_id() {
         return customer_id;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
     public String getSurname() {
         return surname;
@@ -37,12 +40,15 @@ public class Customer {
         return cell;
     }
 
+    public Customer() {}
+
     public Customer(Builder builder){
         this.customer_id = builder.customer_id;
         this.name = builder.name;
         this.surname = builder.surname;
         this.email = builder.email;
         this.cell = builder.cell;
+        this.password = builder.password;
     }
 
     public static class Builder{
@@ -51,6 +57,7 @@ public class Customer {
         private String surname;
         private String email;
         private String cell;
+        private String password;
 
         public Builder customer_id(Long customer_id) {
             this.customer_id = customer_id;
@@ -74,6 +81,11 @@ public class Customer {
 
         public Builder cell(String cell) {
             this.cell = cell;
+            return this;
+        }
+
+        public Builder password(String password) {
+            this.password = password;
             return this;
         }
 

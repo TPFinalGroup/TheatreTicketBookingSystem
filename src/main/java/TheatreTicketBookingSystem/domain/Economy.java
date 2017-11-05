@@ -17,9 +17,9 @@ public class Economy implements Seating_Class {
     private Long seat_id;
     private String class_name;
     private int price;
+    private String imagePath;
 
-    public Economy() {
-    }
+    public Economy() { }
 
     public String getClass_name() {
         return class_name;
@@ -33,18 +33,20 @@ public class Economy implements Seating_Class {
         return seat_id;
     }
 
+    public String getImagePath() { return imagePath; }
+
     public Economy(Builder builder){
         this.class_name = builder.class_name;
         this.price = builder.price;
         this.seat_id = builder.seat_id;
+        this.imagePath = builder.imagePath;
     }
 
     public static class Builder{
         private String class_name;
         private int price;
         private Long seat_id;
-//        private Recipe recipe;
-//        private Viewer viewer;
+        private String imagePath;
 
 
         public Builder class_name(String class_name) {
@@ -62,15 +64,10 @@ public class Economy implements Seating_Class {
             return this;
         }
 
-//        public Builder recipe(Recipe recipe) {
-//            this.recipe = recipe;
-//            return this;
-//        }
-//
-//        public Builder viewer(Viewer viewer) {
-//            this.viewer = viewer;
-//            return this;
-//        }
+        public Builder imagePath(String imagePath) {
+            this.imagePath = imagePath;
+            return this;
+        }
 
         public Economy build(){
             return new Economy(this);

@@ -17,12 +17,9 @@ public class Action implements Movie
     private Long movie_id;
     private int duration;
     private String title;
+    private String imagePath;
 
-    public Action()
-    {
-
-    }
-
+    public String getImagePath() { return imagePath; }
     public Long getMovie_Id()
     {
         return movie_id;
@@ -36,13 +33,13 @@ public class Action implements Movie
         return title;
     }
 
-//    @ManyToOne(optional=false)
-//    private Recipe recipe;
+    public Action() { }
 
     public Action(Builder builder){
         this.movie_id = builder.movie_id;
         this.duration = builder.duration;
         this.title = builder.title;
+        this.imagePath = builder.imagePath;
     }
 
     public static class Builder{
@@ -50,8 +47,12 @@ public class Action implements Movie
         private Long movie_id;
         private String title;
         private int duration;
-//        private Recipe recipe;
-//        private Viewer viewer;
+        private String imagePath;
+
+        public Builder imagePath(String imagePath) {
+            this.imagePath = imagePath;
+            return this;
+        }
 
         public Builder movie_id(Long movie_id) {
             this.movie_id = movie_id;
@@ -67,16 +68,6 @@ public class Action implements Movie
             this.duration = duration;
             return this;
         }
-
-//        public Builder recipe(Recipe recipe) {
-//            this.recipe = recipe;
-//            return this;
-//        }
-//
-//        public Builder viewer(Viewer viewer) {
-//            this.viewer = viewer;
-//            return this;
-//        }
 
         public Action build(){
             return  new Action(this);

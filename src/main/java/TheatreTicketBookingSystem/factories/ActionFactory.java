@@ -11,6 +11,7 @@ public class ActionFactory {
 
     public static Action getAction(Map<String, Object> values){
         Action factoryAction = new Action.Builder()
+                .imagePath((String)values.get("imagePath"))
                 .movie_id((Long)values.get("movie_id"))
                 .duration((Integer)values.get("duration"))
                 .title((String)values.get("title"))

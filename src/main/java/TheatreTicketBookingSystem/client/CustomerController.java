@@ -27,12 +27,13 @@ public class CustomerController {
         return customerService.readAll();
     }
 
-    @RequestMapping(value="/add", method = RequestMethod.POST)
-    public void addCustomer(@RequestBody Customer customer){
+    @RequestMapping( method = RequestMethod.POST, value="/add")
+    public String addCustomer(@RequestBody Customer customer){
         customerService.create(customer);
+        return customer.getName().toString() + " has SuccessFully registered";
     }
 
-    @RequestMapping(value="/find{customerID}")
+    @RequestMapping(value="/find/{customerID}")
     public @ResponseBody Customer findCustomer(@PathVariable Long customerID){
         return customerService.readById(customerID);
     }

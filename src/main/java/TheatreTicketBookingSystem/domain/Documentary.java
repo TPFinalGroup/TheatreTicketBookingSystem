@@ -17,11 +17,9 @@ public class Documentary implements Movie
     private Long movie_id;
     private int duration;
     private String title;
+    private String imagePath;
 
-    public Documentary()
-    {
-
-    }
+    public Documentary() { }
 
     public Long getMovie_Id()
     {
@@ -36,13 +34,13 @@ public class Documentary implements Movie
         return title;
     }
 
-//    @ManyToOne(optional=false)
-//    private Recipe recipe;
+    public String getImagePath() { return imagePath; }
 
     public Documentary(Builder builder){
         this.movie_id = builder.movie_id;
         this.duration = builder.duration;
         this.title = builder.title;
+        this.imagePath = builder.imagePath;
     }
 
     public static class Builder{
@@ -50,8 +48,7 @@ public class Documentary implements Movie
         private Long movie_id;
         private String title;
         private int duration;
-//        private Recipe recipe;
-//        private Viewer viewer;
+        private String imagePath;
 
         public Builder movie_id(Long movie_id) {
             this.movie_id = movie_id;
@@ -68,15 +65,10 @@ public class Documentary implements Movie
             return this;
         }
 
-//        public Builder recipe(Recipe recipe) {
-//            this.recipe = recipe;
-//            return this;
-//        }
-//
-//        public Builder viewer(Viewer viewer) {
-//            this.viewer = viewer;
-//            return this;
-//        }
+        public Builder imagePath(String imagePath) {
+            this.imagePath = imagePath;
+            return this;
+        }
 
         public Documentary build(){
             return  new Documentary(this);

@@ -31,7 +31,7 @@ public class Admin {
     public String getEmail() {
         return email;
     }
-
+    public Admin() {}
     public Admin(Builder builder){
         this.admin_id = builder.admin_id;
         this.name = builder.name;

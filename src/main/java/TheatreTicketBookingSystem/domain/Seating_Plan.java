@@ -35,7 +35,10 @@ public class Seating_Plan {
     public ArrayList<Integer> getSeats() {
         return seats;
     }
+    public Seating_Plan()
+    {
 
+    }
     public Seating_Plan(Builder builder){
         this.seat_plan_id = builder.seat_plan_id;
         this.seats_booked = builder.seats_booked;

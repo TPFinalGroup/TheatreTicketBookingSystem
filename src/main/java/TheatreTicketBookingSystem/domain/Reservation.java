@@ -36,6 +36,7 @@ public class Reservation {
     }
 
     public int getCustomer_id() {return customer_id;}
+    public Reservation() {}
 
     public Reservation(Builder builder){
         this.reservation_id = builder.reservation_id;
