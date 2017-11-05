@@ -8,5 +8,5 @@ import org.springframework.data.repository.CrudRepository;
  * Created by Hasan on 10/29/2017.
  */
 
-public interface AdminRepository extends CrudRepository<Admin, String> {
+public interface AdminRepository extends CrudRepository<Admin, Long> {
 }
