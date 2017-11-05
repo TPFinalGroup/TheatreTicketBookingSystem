@@ -11,7 +11,7 @@ import java.util.Map;
 public class ReservationFactory {
     public static Reservation getReservation(Map<String, Object> values){
         Reservation factoryReservation = new Reservation.Builder()
-                .reservation_id((Integer)values.get("reservation_id"))
+                .reservation_id((Long)values.get("reservation_id"))
                 .seats((ArrayList<Integer>) values.get("seats"))
                 .show_id((Integer)values.get("show_id"))
                 .total_price((Integer)values.get("total_price"))
