@@ -11,13 +11,13 @@ import javax.persistence.Id;
 public class Customer {
     @Id
     @GeneratedValue
-    private int customer_id;
+    private Long customer_id;
     private String name;
     private String surname;
     private String email;
     private String cell;
 
-    public int getCustomer_id() {
+    public Long getCustomer_id() {
         return customer_id;
     }
 
@@ -46,13 +46,13 @@ public class Customer {
     }
 
     public static class Builder{
-        private int customer_id;            //pk
+        private Long customer_id;            //pk
         private String name;
         private String surname;
         private String email;
         private String cell;
 
-        public Builder customer_id(int customer_id) {
+        public Builder customer_id(Long customer_id) {
             this.customer_id = customer_id;
             return this;
         }

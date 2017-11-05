@@ -12,13 +12,13 @@ import java.util.ArrayList;
 public class Seating_Plan {
     @Id
     @GeneratedValue
-    private int seat_plan_id;   //pk
+    private Long seat_plan_id;   //pk
     private int seats_booked;
     private int seats_avail;
     private ArrayList<Integer> seats;
     private int show_id;        //fk
 
-    public int getSeat_plan_id() {
+    public Long getSeat_plan_id() {
         return seat_plan_id;
     }
 
@@ -45,14 +45,14 @@ public class Seating_Plan {
     }
 
     public static class Builder{
-        private int seat_plan_id;   //pk
+        private Long seat_plan_id;   //pk
         private int seats_booked;
         private int seats_avail;
         private ArrayList<Integer> seats;
         private int show_id;        //fk
 
 
-        public Builder seat_plan_id(int seat_plan_id) {
+        public Builder seat_plan_id(Long seat_plan_id) {
             this.seat_plan_id = seat_plan_id;
             return this;
         }
