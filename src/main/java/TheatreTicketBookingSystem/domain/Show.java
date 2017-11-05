@@ -38,7 +38,7 @@ public class Show {
     public int getSeat_plan_id() {
         return seat_plan_id;
     }
-
+    public Show() {}
     public Show(Builder builder){
         this.show_id = builder.show_id;
         this.movie_id = builder.movie_id;

@@ -15,8 +15,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //.roles("USER").and().withUser("help").password("please").roles("ADMIN");
     }
 
+   /* @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.csrf().disable();
+    }*/
+
     protected void configure(HttpSecurity httpSecurity) throws Exception{
         //httpSecurity.httpBasic().and().authorizeRequests().antMatchers("/transcriptreviewsystem/**")
         //.hasRole("USER").and().csrf().disable().headers().frameOptions().disable();
+        httpSecurity.csrf().disable();
     }
 }
