@@ -1,6 +1,6 @@
 package TheatreTicketBookingSystem.factories;
 
-import TheatreTicketBookingSystem.domain.Show;
+import TheatreTicketBookingSystem.domain.Viewing;
 
 import java.util.Date;
 import java.util.Map;
@@ -9,8 +9,8 @@ import java.util.Map;
  * Created by Hasan on 10/31/2017.
  */
 public class ShowFactory {
-    public static Show getShow(Map<String, Object> values){
-        Show factoryShow = new Show.Builder()
+    public static Viewing getShow(Map<String, Object> values){
+        Viewing factoryShow = new Viewing.Builder()
                 .show_id((Long)values.get("show_id"))
                 .movie_id((Integer)values.get("movie_id"))
                 .time((String)values.get("time"))
