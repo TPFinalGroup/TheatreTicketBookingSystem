@@ -1,6 +1,6 @@
 package TheatreTicketBookingSystem.services.Impl;
 
-import TheatreTicketBookingSystem.domain.Show;
+import TheatreTicketBookingSystem.domain.Viewing;
 import TheatreTicketBookingSystem.repositories.ShowRepository;
 import TheatreTicketBookingSystem.services.ShowService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,32 +19,32 @@ public class ShowServiceImpl implements ShowService{
     @Autowired
     private ShowRepository repository;
     @Override
-    public Show create(Show entity) {
+    public Viewing create(Viewing entity) {
         return repository.save(entity) ;
     }
 
     @Override
-    public Show readById(Long id) {
+    public Viewing readById(Long id) {
         return repository.findOne(id);
     }
 
     @Override
-    public Set<Show> readAll() {
-        Iterable<Show> shows =repository.findAll();
+    public Set<Viewing> readAll() {
+        Iterable<Viewing> shows =repository.findAll();
         Set ShowSet = new HashSet();
-        for(Show show:shows){
+        for(Viewing show:shows){
             ShowSet.add(show);
         }
         return ShowSet;
     }
 
     @Override
-    public Show update(Show entity) {
+    public Viewing update(Viewing entity) {
         return repository.save(entity);
     }
 
     @Override
-    public void delete(Show entity) {
+    public void delete(Viewing entity) {
         repository.delete(entity);
     }
 }

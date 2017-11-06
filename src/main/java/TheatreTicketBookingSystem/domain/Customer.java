@@ -1,8 +1,7 @@
 package TheatreTicketBookingSystem.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Hasan on 10/31/2017.
@@ -18,10 +17,17 @@ public class Customer {
     private String cell;
     private String password;
 
+
+
+//    @OneToMany(mappedBy = "reservation_id")
+//    private List<Reservation> reservation;
+
     public String getPassword() {
         return password;
     }
-
+//    public List<Reservation> getReservation() {
+//        return reservation;
+//    }
     public Long getCustomer_id() {
         return customer_id;
     }
@@ -49,6 +55,7 @@ public class Customer {
         this.email = builder.email;
         this.cell = builder.cell;
         this.password = builder.password;
+       // this.reservation = builder.reservation;
     }
 
     public static class Builder{
@@ -58,6 +65,12 @@ public class Customer {
         private String email;
         private String cell;
         private String password;
+        private List<Reservation> reservation;
+
+        public Builder reservation(List<Reservation> reservation) {
+            this.reservation = reservation;
+            return this;
+        }
 
         public Builder customer_id(Long customer_id) {
             this.customer_id = customer_id;
