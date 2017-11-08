@@ -25,7 +25,7 @@ public class ShowFactoryTest {
 
 //    @Test
 //    public void getShow() throws Exception {
-//        show = ShowFactory.getShow(values);
+//        show = ViewingFactory.getShow(values);
 //        assertEquals(100, show.getMovie_Id());
 //    }
 

@@ -5,6 +5,7 @@ import TheatreTicketBookingSystem.domain.Intefaces.Movie;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  * Created by Hasan on 10/31/2017.
@@ -18,6 +19,12 @@ public class SciFi implements Movie
     private int duration;
     private String title;
     private String imagePath;
+//    @OneToOne
+//    private Reservation reservation;
+
+//    public Reservation getReservation() {
+//        return reservation;
+//    }
 
     public SciFi() { }
 
@@ -44,6 +51,7 @@ public class SciFi implements Movie
         this.duration = builder.duration;
         this.title = builder.title;
         this.imagePath = builder.imagePath;
+ //       this.reservation = builder.reservation;
     }
 
     public static class Builder{
@@ -52,6 +60,13 @@ public class SciFi implements Movie
         private String title;
         private int duration;
         private String imagePath;
+        private Reservation reservation;
+
+        public Builder reservation(Reservation reservation) {
+            this.reservation = reservation;
+            return this;
+        }
+
 
         public Builder movie_id(Long movie_id) {
             this.movie_id = movie_id;
