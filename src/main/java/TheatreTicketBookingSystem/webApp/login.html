@@ -83,20 +83,20 @@
 					<div class = "form-group">
 			<label for = "emailField" class = "col-xs-2"> Email: </label>
 			<div class = "col-xs-10">
-				<input type = "text" name = "email" class="form-control" >
+				<input type = "text" name = "email" id = "email" class="form-control" >
 			</div>
 		</div>	
 		
 		<div class = "form-group">
 			<label for = "nameField" class = "col-xs-2"> Password: </label>
 			<div class = "col-xs-10">
-				<input type = "password" name = "password" class="form-control">
+				<input type = "password" name = "password" id = "password" class="form-control">
 			</div>
 		</div>
 			
 			
 		<div align = "center" class="button col-xs-12">
-            <button type="submit" name = "submit" class="btn btn-primary">Submit </button> 
+            <button type="submit" name = "submit" class="btn btn-primary" onclick = "findCustomer(document.getElementById('email').value, document.getElementById('password').value)">Submit </button> 
             <button type="reset" class="btn btn-default">Reset</button>
         </div>
 		

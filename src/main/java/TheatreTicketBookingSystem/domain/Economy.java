@@ -2,17 +2,24 @@ package TheatreTicketBookingSystem.domain;
 
 import TheatreTicketBookingSystem.domain.Intefaces.Seating_Class;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * Created by Hasan on 10/31/2017.
  */
+@Entity
 public class Economy implements Seating_Class {
 
-    private int seat_id;
+    @Id
+    @GeneratedValue
+    private Long seat_id;
     private String class_name;
     private int price;
+    private String imagePath;
 
-    public Economy() {
-    }
+    public Economy() { }
 
     public String getClass_name() {
         return class_name;
@@ -22,22 +29,24 @@ public class Economy implements Seating_Class {
         return price;
     }
 
-    public int getSeat_id() {
+    public Long getSeat_id() {
         return seat_id;
     }
+
+    public String getImagePath() { return imagePath; }
 
     public Economy(Builder builder){
         this.class_name = builder.class_name;
         this.price = builder.price;
         this.seat_id = builder.seat_id;
+        this.imagePath = builder.imagePath;
     }
 
     public static class Builder{
         private String class_name;
         private int price;
-        private int seat_id;
-//        private Recipe recipe;
-//        private Viewer viewer;
+        private Long seat_id;
+        private String imagePath;
 
 
         public Builder class_name(String class_name) {
@@ -50,20 +59,15 @@ public class Economy implements Seating_Class {
             return this;
         }
 
-        public Builder seat_id(int seat_id) {
+        public Builder seat_id(Long seat_id) {
             this.seat_id = seat_id;
             return this;
         }
 
-//        public Builder recipe(Recipe recipe) {
-//            this.recipe = recipe;
-//            return this;
-//        }
-//
-//        public Builder viewer(Viewer viewer) {
-//            this.viewer = viewer;
-//            return this;
-//        }
+        public Builder imagePath(String imagePath) {
+            this.imagePath = imagePath;
+            return this;
+        }
 
         public Economy build(){
             return new Economy(this);

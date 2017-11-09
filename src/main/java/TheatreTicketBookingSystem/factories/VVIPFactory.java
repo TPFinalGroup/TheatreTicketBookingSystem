@@ -10,7 +10,7 @@ import java.util.Map;
 public class VVIPFactory {
     public static VVIP getVVIP(Map<String, Object> values){
         VVIP factoryVVIP = new VVIP.Builder()
-                .seat_id((Integer)values.get("seat_id"))
+                .seat_id((Long)values.get("seat_id"))
                 .price((Integer)values.get("price"))
                 .class_name((String)values.get("class_name"))
                 .build();

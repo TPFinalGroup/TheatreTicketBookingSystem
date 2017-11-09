@@ -11,7 +11,7 @@ public class AdminFactory {
 
     public static Admin getAdmin(Map<String, Object> values){
         Admin factoryAdmin = new Admin.Builder()
-                .admin_id((Integer)values.get("comment_id"))
+                .admin_id((Long)values.get("admin_id"))
                 .email((String) values.get(("email")))
                 .name((String) values.get("name"))
                 .surname((String) values.get("surname"))

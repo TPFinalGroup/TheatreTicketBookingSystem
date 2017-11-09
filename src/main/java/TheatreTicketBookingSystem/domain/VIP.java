@@ -2,14 +2,21 @@ package TheatreTicketBookingSystem.domain;
 
 import TheatreTicketBookingSystem.domain.Intefaces.Seating_Class;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 /**
  * Created by Hasan on 10/31/2017.
  */
+@Entity
 public class VIP implements Seating_Class {
 
     private String class_name;
     private int price;
-    private int seat_id;
+    @Id
+    @GeneratedValue
+    private Long seat_id;
 
     public VIP() {
     }
@@ -22,7 +29,7 @@ public class VIP implements Seating_Class {
         return price;
     }
 
-    public int getSeat_id() {
+    public Long getSeat_id() {
         return seat_id;
     }
 
@@ -35,7 +42,7 @@ public class VIP implements Seating_Class {
     public static class Builder{
         private String class_name;
         private int price;
-        private int seat_id;
+        private Long seat_id;
 //        private Recipe recipe;
 //        private Viewer viewer;
 
@@ -50,7 +57,7 @@ public class VIP implements Seating_Class {
             return this;
         }
 
-        public Builder seat_id(int seat_id) {
+        public Builder seat_id(Long seat_id) {
             this.seat_id = seat_id;
             return this;
         }

@@ -10,7 +10,8 @@ import java.util.Map;
 public class SciFiFactory {
     public static SciFi getSciFi(Map<String, Object> values){
         SciFi factorySciFi = new SciFi.Builder()
-                .movie_id((Integer)values.get("movie_id"))
+                .imagePath((String)values.get("imagePath"))
+                .movie_id((Long)values.get("movie_id"))
                 .duration((Integer)values.get("duration"))
                 .title((String)values.get("title"))
                 .build();

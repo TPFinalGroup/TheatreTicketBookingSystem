@@ -12,14 +12,14 @@ import java.util.Date;
 public class Show {
     @Id
     @GeneratedValue
-    private int show_id;
+    private Long show_id;
     private int movie_id;       //fk
     private Date show_date;
     private String time;
     private int seat_plan_id;   //fk
 
 
-    public int getShow_Id() {
+    public Long getShow_Id() {
         return show_id;
     }
 
@@ -38,7 +38,7 @@ public class Show {
     public int getSeat_plan_id() {
         return seat_plan_id;
     }
-
+    public Show() {}
     public Show(Builder builder){
         this.show_id = builder.show_id;
         this.movie_id = builder.movie_id;
@@ -48,7 +48,7 @@ public class Show {
     }
 
     public static class Builder{
-        private int show_id;
+        private Long show_id;
         private int movie_id;       //fk
         private Date show_date;
         private String time;
@@ -57,7 +57,7 @@ public class Show {
 //        private Viewer viewer;
 
 
-        public Builder show_id(int show_id) {
+        public Builder show_id(Long show_id) {
             this.show_id = show_id;
             return this;
         }
