@@ -12,11 +12,11 @@ import java.util.ArrayList;
 public class Seating_Plan {
     @Id
     @GeneratedValue
-    private Long seat_plan_id;   //pk
-    private int seats_booked;
-    private int seats_avail;
-    private ArrayList<Integer> seats;
-    private int show_id;        //fk
+    protected Long seat_plan_id;   //pk
+    protected int seats_booked;
+    protected int seats_avail;
+    protected ArrayList<Integer> seats;
+    protected int show_id;        //fk
 
     public Long getSeat_plan_id() {
         return seat_plan_id;

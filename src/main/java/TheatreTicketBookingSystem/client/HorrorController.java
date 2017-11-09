@@ -28,6 +28,7 @@ public class HorrorController {
 
     @RequestMapping(value="/add", method = RequestMethod.POST)
     public void addHorror(@RequestBody Horror horror){
+
         horrorService.create(horror);
     }
 

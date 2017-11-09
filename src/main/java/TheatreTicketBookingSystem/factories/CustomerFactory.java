@@ -15,7 +15,7 @@ public class CustomerFactory {
                 .email((String)values.get("email"))
                 .name((String)values.get("name"))
                 .surname((String)values.get("surname"))
-                .password((String)values.get("password"))
+                //.password((String)values.get("password"))
                 .build();
         return factoryCustomer;
     }

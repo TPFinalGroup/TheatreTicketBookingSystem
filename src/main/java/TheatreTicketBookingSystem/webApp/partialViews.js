@@ -11,8 +11,8 @@ function header()
 								<li><a href = 'bookShow.html?cat=action'>Action</a></li>								
 							</ul>
 					</li>
-				  <li class = 'bar' ><a href='#'>Bookings</a></li>
-				  <li class = 'bar' ><a href='#'>Your Reservations</a></li>
+				  <li class = 'bar' ><a href='bookShow.html?cat=all'>Bookings</a></li>
+				  <li class = 'bar' ><a href='findReservation.html'>Your Reservations</a></li>
 				  <li class = 'bar' ><a href='contactUs.html'>Contact Us</a></li>
 				  <li class = 'bar' ><a href='aboutUs.html'>About Us</a></li>
 				</ul>			

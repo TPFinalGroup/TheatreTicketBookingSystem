@@ -38,6 +38,19 @@ public class CustomerServiceImpl implements CustomerService {
         return customerSet;
     }
 
+
+    public Customer login(String email, String password) {
+        Iterable<Customer> customers =repository.findAll();
+        Customer cust = null;
+        for(Customer customer:customers){
+            if(customer.getPassword().equals(password) && customer.getEmail().equals(email)) {
+                cust = customer;
+                break;
+            }
+        }
+        return cust;
+    }
+
     @Override
     public Customer update(Customer entity) {
         return repository.save(entity);

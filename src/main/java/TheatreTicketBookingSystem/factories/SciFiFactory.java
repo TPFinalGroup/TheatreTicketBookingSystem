@@ -1,5 +1,6 @@
 package TheatreTicketBookingSystem.factories;
 
+import TheatreTicketBookingSystem.domain.Reservation;
 import TheatreTicketBookingSystem.domain.SciFi;
 
 import java.util.Map;
@@ -14,6 +15,7 @@ public class SciFiFactory {
                 .movie_id((Long)values.get("movie_id"))
                 .duration((Integer)values.get("duration"))
                 .title((String)values.get("title"))
+                .reservation((Reservation)values.get("reservation"))
                 .build();
         return factorySciFi;
     }

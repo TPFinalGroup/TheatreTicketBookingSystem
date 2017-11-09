@@ -1,6 +1,6 @@
 package TheatreTicketBookingSystem.client;
 
-import TheatreTicketBookingSystem.domain.Show;
+import TheatreTicketBookingSystem.domain.Viewing;
 import TheatreTicketBookingSystem.services.Impl.ShowServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,28 +21,29 @@ public class ShowController {
 
     @GetMapping(path="/all")
     public @ResponseBody
-    Set<Show> getAllAction()
+    Set<Viewing> getAllAction()
     {
         return showService.readAll();
     }
 
     @RequestMapping(value="/add", method = RequestMethod.POST)
-    public void addShow(@RequestBody Show show){
+    public void addShow(@RequestBody Viewing show){
         showService.create(show);
     }
 
     @RequestMapping(value="/find{showID}")
-    public @ResponseBody Show findShow(@PathVariable Long showID){
+    public @ResponseBody
+    Viewing findShow(@PathVariable Long showID){
         return showService.readById(showID);
     }
 
     @RequestMapping(value="/update", method = RequestMethod.PUT)
-    public void updateShow(@RequestBody Show show){
+    public void updateShow(@RequestBody Viewing show){
         showService.update(show);
     }
 
     @RequestMapping(value="/delete/{showID}",  method = RequestMethod.DELETE)
-    public void deleteShow(@PathVariable Show show){
+    public void deleteShow(@PathVariable Viewing show){
 
         showService.delete(show);
     }

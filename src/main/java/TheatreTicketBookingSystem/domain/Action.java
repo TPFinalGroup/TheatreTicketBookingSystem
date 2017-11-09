@@ -2,27 +2,35 @@ package TheatreTicketBookingSystem.domain;
 
 import TheatreTicketBookingSystem.domain.Intefaces.Movie;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Hasan on 10/31/2017.
  */
 @Entity
-public class Action implements Movie
+public class Action //implements Movie
 {
     @Id
     @GeneratedValue
-    private Long movie_id;
-    private int duration;
-    private String title;
-    private String imagePath;
+    protected Long id;          // make stuff protected from the law
+    protected int duration;
+    protected String title;
+    protected String imagePath;
+    @OneToMany()
+    protected List<Viewing> viewing;
+//    @OneToOne
+//    private Reservation reservation;
+
+//    public Reservation getReservation() {
+//        return reservation;
+//    }
 
     public String getImagePath() { return imagePath; }
-    public Long getMovie_Id()
+
+    public Long getId()
     {
-        return movie_id;
+        return id;
     }
 
     public int getDuration() {
@@ -36,18 +44,32 @@ public class Action implements Movie
     public Action() { }
 
     public Action(Builder builder){
-        this.movie_id = builder.movie_id;
+        this.id = builder.id;
         this.duration = builder.duration;
         this.title = builder.title;
         this.imagePath = builder.imagePath;
+        this.viewing = builder.viewing;
+  //      this.reservation = builder.reservation;
     }
 
     public static class Builder{
 
-        private Long movie_id;
+        private Long id;
         private String title;
         private int duration;
         private String imagePath;
+        private Reservation reservation;
+        private List<Viewing> viewing;
+
+        public Builder viewing(List<Viewing> viewing) {
+            this.viewing = viewing;
+            return this;
+        }
+
+        public Builder reservation(Reservation reservation) {
+            this.reservation = reservation;
+            return this;
+        }
 
         public Builder imagePath(String imagePath) {
             this.imagePath = imagePath;
@@ -55,7 +77,7 @@ public class Action implements Movie
         }
 
         public Builder movie_id(Long movie_id) {
-            this.movie_id = movie_id;
+            this.id = movie_id;
             return this;
         }
 

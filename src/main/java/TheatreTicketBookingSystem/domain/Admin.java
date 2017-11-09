@@ -11,10 +11,10 @@ import javax.persistence.Id;
 public class Admin {
     @Id
     @GeneratedValue
-    private Long admin_id;       //pk
-    private String name;
-    private String surname;
-    private String email;
+    protected Long admin_id;       //pk
+    protected String name;
+    protected String surname;
+    protected String email;
 
     public Long getAdmin_id() {
         return admin_id;

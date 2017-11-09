@@ -5,6 +5,7 @@ import TheatreTicketBookingSystem.domain.Intefaces.Movie;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 /**
  * Created by Hasan on 10/31/2017.
@@ -14,10 +15,16 @@ public class Documentary implements Movie
 {
     @Id
     @GeneratedValue
-    private Long movie_id;
-    private int duration;
-    private String title;
-    private String imagePath;
+    protected Long movie_id;
+    protected int duration;
+    protected String title;
+    protected String imagePath;
+//    @OneToOne
+//    private Reservation reservation;
+//
+//    public Reservation getReservation() {
+//        return reservation;
+//    }
 
     public Documentary() { }
 
@@ -41,6 +48,8 @@ public class Documentary implements Movie
         this.duration = builder.duration;
         this.title = builder.title;
         this.imagePath = builder.imagePath;
+   //     this.reservation = builder.reservation;
+
     }
 
     public static class Builder{
@@ -49,6 +58,12 @@ public class Documentary implements Movie
         private String title;
         private int duration;
         private String imagePath;
+        private Reservation reservation;
+
+        public Builder reservation(Reservation reservation) {
+            this.reservation = reservation;
+            return this;
+        }
 
         public Builder movie_id(Long movie_id) {
             this.movie_id = movie_id;

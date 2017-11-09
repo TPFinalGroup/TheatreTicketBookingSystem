@@ -14,10 +14,10 @@ public class Economy implements Seating_Class {
 
     @Id
     @GeneratedValue
-    private Long seat_id;
-    private String class_name;
-    private int price;
-    private String imagePath;
+    protected Long seat_id;
+    protected String class_name;
+    protected int price;
+    protected String imagePath;
 
     public Economy() { }
 

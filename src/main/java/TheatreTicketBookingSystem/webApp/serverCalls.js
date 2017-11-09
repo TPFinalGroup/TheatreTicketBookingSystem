@@ -52,3 +52,22 @@ function findCustomer(email, password)
 			console.log(data);
 		});
 }
+
+function findReservation(email, password)
+{console.log("kak");
+	$.get('http://localhost:8080/customer/login/' + email + "/" + password,
+		function(data){			
+			findCustomerReservation(data);
+		});
+}
+
+function findCustomerReservation(customer)
+{
+	var Customer = JSON.stringify(customer);
+	console.log(Customer);
+	$.ajaxSetup({headers:{'Content-Type': 'application/json'}});
+	$.post('http://localhost:8080/reservation/findCustReservation/', Customer,
+		function(data){
+			console.log(data);
+		});
+}
