@@ -91,6 +91,7 @@
 		</head>
 		<body onload = "header(),footer()">		
 		<script src= "partialViews.js"></script>
+		<script src= "serverCalls.js"></script>
 		
 		<form method="GET" action= "" >
 		
@@ -99,9 +100,11 @@
 		<center>
 			
 		<h3>
-		Please enter your email address:&nbsp;&nbsp;&nbsp;<input type="text" id="emailTxt"></input>
+		Please enter your email address:&nbsp;&nbsp;&nbsp;<input type="text" id="email"></input>
+		Please enter your password:&nbsp;&nbsp;&nbsp;<input type="text" id="password"></input>
 		<span class="tabbed"></span>
-		<input type="button" id="reservationsBtn" value='Get reservations'></input>
+		<div id = "reservations"></div>
+		<input type="button" id="reservationsBtn" value='Get reservations' onclick = "findReservation(document.getElementById('email').value, document.getElementById('password').value)"></input>
 		</h3>
 
 		<div id="reservations" style="display:none">

@@ -1,6 +1,7 @@
 package TheatreTicketBookingSystem.domain;
 
 
+import javax.faces.convert.DateTimeConverter;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -72,7 +73,9 @@ public class Viewing {
 //    public int getSeat_plan_id() {
 //        return seat_plan_id;
 //    }
-    public Viewing() {}
+    public Viewing() {
+        //this.show_date = new Date();
+    }
     public Viewing(Builder builder){
         this.id = builder.id;
         this.show_date = builder.show_date;

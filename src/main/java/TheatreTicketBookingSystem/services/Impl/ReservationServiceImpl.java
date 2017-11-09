@@ -1,5 +1,6 @@
 package TheatreTicketBookingSystem.services.Impl;
 
+import TheatreTicketBookingSystem.domain.Customer;
 import TheatreTicketBookingSystem.domain.Reservation;
 import TheatreTicketBookingSystem.repositories.ReservationRepository;
 import TheatreTicketBookingSystem.services.ReservationService;
@@ -37,6 +38,16 @@ public class ReservationServiceImpl implements ReservationService{
             }
             return reservationSet;
         }
+
+     public Set<Reservation> CustomerReservations(Customer customer) {
+        Iterable<Reservation> reservations =repository.findAll();
+        Set reservationSet = new HashSet();
+        for(Reservation reservation:reservations){
+            if(reservation.getCustomer().getCustomer_id() == customer.getCustomer_id())
+            reservationSet.add(reservation);
+        }
+        return reservationSet;
+    }
 
         @Override
         public Reservation update(Reservation entity) {

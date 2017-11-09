@@ -20,6 +20,9 @@ public class Reservation {
     @ManyToOne(optional=false)
     protected Customer customer;        //fk
 
+    @ManyToOne(optional=false)
+    public Viewing viewing;
+
     public Long getReservation_id() {
         return reservation_id;
     }
