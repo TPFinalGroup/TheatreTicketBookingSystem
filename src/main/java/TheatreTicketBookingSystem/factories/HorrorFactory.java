@@ -14,7 +14,7 @@ public class HorrorFactory {
     public static Horror getHorror(Map<String, Object> values){
         Horror factoryHorror = new Horror.Builder()
                 .imagePath((String)values.get("imagePath"))
-                .movie_id((Long)values.get("movie_id"))
+                .movie_id((Integer)values.get("movie_id"))
                 .duration((Integer)values.get("duration"))
                 .title((String)values.get("title"))
                 .reservation((Reservation)values.get("reservation"))

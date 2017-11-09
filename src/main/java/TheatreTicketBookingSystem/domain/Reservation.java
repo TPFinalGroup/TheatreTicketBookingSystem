@@ -10,15 +10,15 @@ import java.util.ArrayList;
 public class Reservation {
     @Id
     @GeneratedValue
-    private Long reservation_id;      //pk
+    protected Long reservation_id;      //pk
     //private ArrayList<Integer> seats;
-    private int total_price;
+    protected int total_price;
 
 
 //    @ManyToOne(optional=false)
 //    private Viewing show;            //fk
     @ManyToOne(optional=false)
-    private Customer customer;        //fk
+    protected Customer customer;        //fk
 
     public Long getReservation_id() {
         return reservation_id;

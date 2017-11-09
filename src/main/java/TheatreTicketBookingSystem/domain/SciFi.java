@@ -15,10 +15,10 @@ public class SciFi implements Movie
 {
     @Id
     @GeneratedValue
-    private Long movie_id;
-    private int duration;
-    private String title;
-    private String imagePath;
+    protected Long movie_id;
+    protected int duration;
+    protected String title;
+    protected String imagePath;
 //    @OneToOne
 //    private Reservation reservation;
 

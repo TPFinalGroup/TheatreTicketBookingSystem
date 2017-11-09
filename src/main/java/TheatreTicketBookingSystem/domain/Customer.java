@@ -1,5 +1,9 @@
 package TheatreTicketBookingSystem.domain;
 
+import com.google.gson.Gson;
+import org.springframework.boot.json.GsonJsonParser;
+
+import javax.json.Json;
 import javax.persistence.*;
 import java.util.List;
 
@@ -10,12 +14,13 @@ import java.util.List;
 public class Customer {
     @Id
     @GeneratedValue
-    private Long customer_id;
-    private String name;
-    private String surname;
-    private String email;
-    private String cell;
-    private String password;
+    protected Long customer_id;
+    protected String name;
+    protected String surname;
+    protected String email;
+    protected String cell;
+    protected String password;
+
 
 
 
@@ -46,7 +51,12 @@ public class Customer {
         return cell;
     }
 
-    public Customer() {}
+    public Customer() {
+
+//        Gson json = new Gson();
+//        GsonJsonParser.class.cast(this);
+//        Long i = this.customer_id;
+    }
 
     public Customer(Builder builder){
         this.customer_id = builder.customer_id;
@@ -54,7 +64,7 @@ public class Customer {
         this.surname = builder.surname;
         this.email = builder.email;
         this.cell = builder.cell;
-        this.password = builder.password;
+       // this.password = builder.password;
        // this.reservation = builder.reservation;
     }
 
@@ -64,7 +74,7 @@ public class Customer {
         private String surname;
         private String email;
         private String cell;
-        private String password;
+       // private String password;
         private List<Reservation> reservation;
 
         public Builder reservation(List<Reservation> reservation) {
@@ -97,10 +107,10 @@ public class Customer {
             return this;
         }
 
-        public Builder password(String password) {
-            this.password = password;
-            return this;
-        }
+//        public Builder password(String password) {
+//            this.password = password;
+//            return this;
+//        }
 
         public Customer build(){
             return  new Customer(this);

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.json.Json;
 import java.util.Set;
 
 /**
@@ -29,8 +30,17 @@ public class CustomerController {
 
     @RequestMapping( method = RequestMethod.POST, value="/add")
     public String addCustomer(@RequestBody Customer customer){
+
+   //     Customer customer = (Customer)obj;
         customerService.create(customer);
+//Json x = obj;
         return customer.getName().toString() + " has SuccessFully registered";
+    }
+
+    @RequestMapping(value="/login/{email}/{password}")
+    public @ResponseBody Customer findCustomer(@PathVariable String email, @PathVariable String password){
+        Customer cust = customerService.login(email, password);
+        return cust;
     }
 
     @RequestMapping(value="/find/{customerID}")

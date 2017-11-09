@@ -10,19 +10,20 @@ import java.util.List;
 @Entity
 public class Horror implements Movie
 {
+
     @Id
-    //@GeneratedValue
-    private Long movie_id;
-    private int duration;
-    private String title;
-    private String imagePath;
+    @GeneratedValue
+    public int movie_id;
+    protected int duration;
+    protected String title;
+    protected String imagePath;
 
 //    public List<Viewing> getViewing() {
 //        return viewing;
 //    }
 //
     @OneToMany(mappedBy = "id")
-    private List<Viewing> viewing;
+    protected List<Viewing> viewing;
 //    @OneToOne
 //    private Reservation reservation;
 
@@ -30,9 +31,11 @@ public class Horror implements Movie
 //        return reservation;
 //    }
 
-    public Horror() { }
+    public Horror() {
+        int i = this.movie_id;
+    }
 
-    public Long getMovie_Id()
+    public int getMovie_Id()
     {
         return movie_id;
     }
@@ -60,7 +63,7 @@ public class Horror implements Movie
 
     public static class Builder{
 
-        private Long movie_id;
+        private int movie_id;
         private String title;
         private int duration;
         private String imagePath;
@@ -77,7 +80,7 @@ public class Horror implements Movie
             return this;
         }
 
-        public Builder movie_id(Long movie_id) {
+        public Builder movie_id(int movie_id) {
             this.movie_id = movie_id;
             return this;
         }

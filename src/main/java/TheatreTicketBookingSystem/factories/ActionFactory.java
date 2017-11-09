@@ -2,7 +2,9 @@ package TheatreTicketBookingSystem.factories;
 
 import TheatreTicketBookingSystem.domain.Action;
 import TheatreTicketBookingSystem.domain.Reservation;
+import TheatreTicketBookingSystem.domain.Viewing;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -17,6 +19,7 @@ public class ActionFactory {
                 .duration((Integer)values.get("duration"))
                 .title((String)values.get("title"))
                 .reservation((Reservation)values.get("reservation"))
+                .viewing((List<Viewing>)values.get("viewing"))
                 .build();
         return factoryAction;
     }

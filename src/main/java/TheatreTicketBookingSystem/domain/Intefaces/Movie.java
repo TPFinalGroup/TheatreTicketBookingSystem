@@ -9,5 +9,5 @@ public interface Movie {
 
     public String getTitle();
 
-    public Long getMovie_Id();
+    //public Long getMovie_Id();
 }

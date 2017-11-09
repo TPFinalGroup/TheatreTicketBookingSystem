@@ -29,6 +29,10 @@ public class ActionController {
     @RequestMapping(value="/add", method = RequestMethod.POST)
     public void addAction(@RequestBody Action action){
         actionService.create(action);
+
+       /* Action a = (Action)action;
+
+        Action x = a;*/
     }
 
     @RequestMapping(value="/find{actionID}")

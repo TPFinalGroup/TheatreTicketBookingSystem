@@ -12,11 +12,11 @@ import javax.persistence.Id;
 @Entity
 public class VVIP implements Seating_Class {
 
-    private String class_name;
-    private int price;
+    protected String class_name;
+    protected int price;
     @Id
     @GeneratedValue
-    private Long seat_id;
+    protected Long seat_id;
 
     public VVIP() {
     }

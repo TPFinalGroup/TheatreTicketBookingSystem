@@ -12,21 +12,21 @@ import java.util.List;
 public class Viewing {
     @Id
     @GeneratedValue
-    private Long id;
-    private Date show_date;
-    private String time;
+    protected Long id;
+    protected Date show_date;
+    protected String time;
     @OneToMany(mappedBy = "reservation_id")
-    private List<Reservation> reservation;
+    protected List<Reservation> reservation;
 
     @ManyToOne
     //@PrimaryKeyJoinColumn(name="email", referencedColumnName="email")
     private Horror horror;
-    @OneToOne(cascade=CascadeType.ALL)
-    private Action action;
-    @OneToOne(cascade=CascadeType.ALL)
-    private Documentary documentary;
-    @OneToOne(cascade=CascadeType.ALL)
-    private SciFi scifi;
+    @ManyToOne
+    protected Action action;
+    @ManyToOne
+    protected Documentary documentary;
+    @ManyToOne
+    protected SciFi scifi;
 
 
     public Horror getHorror() {
