@@ -5,14 +5,14 @@ function header()
 				    <li class = 'bar dropdown'>
 						<a class = 'dropdown-toggle' data-toggle = 'dropdown' href = '#' >Now Playing <span class = 'caret'></span></a>
 							<ul class = 'dropdown-menu'>
-								<li><a href = '#'>Horror</a></li>
-								<li><a href = '#'>Sci-Fi</a></li>
-								<li><a href = '#'>Documentory</a></li>
-								<li><a href = '#'>Action</a></li>								
+								<li><a href = 'bookShow.html?cat=horror'>Horror</a></li>
+								<li><a href = 'bookShow.html?cat=scifi'>Sci-Fi</a></li>
+								<li><a href = 'bookShow.html?cat=documentary'>Documentary</a></li>
+								<li><a href = 'bookShow.html?cat=action'>Action</a></li>								
 							</ul>
 					</li>
-				  <li class = 'bar' ><a href='#'>Bookings</a></li>
-				  <li class = 'bar' ><a href='#'>Your Reservations</a></li>
+				  <li class = 'bar' ><a href='bookShow.html?cat=all'>Bookings</a></li>
+				  <li class = 'bar' ><a href='findReservation.html'>Your Reservations</a></li>
 				  <li class = 'bar' ><a href='contactUs.html'>Contact Us</a></li>
 				  <li class = 'bar' ><a href='aboutUs.html'>About Us</a></li>
 				</ul>			
@@ -20,8 +20,9 @@ function header()
 				  <li class = 'bar' ><a href='login.html'>Login</a></li>
 				  <li class = 'register bar' ><a href='register.html'>Register</a></li>
 				</ul>
+
 			</div>	
-			<h1 id = 'title'><a id = 'title' href = 'index.html'>Buhnrop</a></h1>`;
+			<h1 id = 'title'><a id = 'title' href = 'index.html'>Cine world</a></h1>`;
 			
 			document.getElementById("header").innerHTML = html;
 }
@@ -30,7 +31,7 @@ function footer()
 {
 	var html = `<div class = "row" style = "margin-top:15px">
 			<div class = "col-sm-4">
-				<h4 style = "text-align: right">&copy; 2017 Buhnrop</h4>
+				<h4 style = "text-align: right">&copy; 2017 Cine world</h4>
 			</div>
 			<div class = "col-sm-4">
 				<h4 style = "text-align: center">Follow us on</h4>
